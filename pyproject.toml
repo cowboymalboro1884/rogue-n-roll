@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "rogue-n-roll"
+version = "0.1.0"
+description = "Классическая roguelike игра с современными элементами"
+authors = ["Your Name <your.email@example.com>"]
+readme = "README.md"
+packages = [{include = "rogue_n_roll"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+tcod = "^18.1.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
