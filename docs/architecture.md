@@ -1,6 +1,6 @@
 ## Схема архитектуры
 
-```mermide
+```mermaid
 ---
 config:
   layout: dagre
