@@ -1,0 +1,29 @@
+---
+config:
+  layout: dagre
+---
+flowchart TD
+ subgraph CoreLogic["Ядро игровой логики"]
+        GM("Игровой менеджер / Game Manager")
+        WM("Менеджер мира / World Manager")
+        EM("Менеджер сущностей / Entity Manager")
+        CS("Боевая система / Combat System")
+        IS("Система инвентаря / Inventory System")
+        QS("Система квестов / Quest System")
+        AIS("Система ИИ / AI System")
+  end
+ subgraph Presentation["Представление"]
+        UA("Пользовательский интерфейс / User Interface")
+        CR("Консольный рендерер / Console Renderer")
+  end
+    UA --> IH("Обработчик ввода / Input Handler") & CR
+    IH --> GM
+    GM --> WM & EM & CS & IS & QS & AIS
+    WM --> MG("Генератор карт / Map Generator") & DM("Менеджер данных / Data Manager")
+    EM --> DM
+    IS --> DM
+    QS --> DM
+    CR --> WM & EM & IS
+    WM -- Отображение карты --> CR
+    EM -- Отображение сущностей --> CR
+    IS -- Отображение инвентаря --> CR
