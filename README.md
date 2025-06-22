@@ -2,6 +2,8 @@
 
 Классическая roguelike игра с современными элементами, написанная на Python.
 
+![](docs/pictures/gameplay.png)
+
 Архитектура - [здесь](docs/architecture.md)
 
 ## Особенности
